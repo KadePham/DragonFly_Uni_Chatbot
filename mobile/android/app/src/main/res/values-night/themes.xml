@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ChatGptAPI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/yellow</item> <!-- màu nền button, toolbar -->
+        <item name="colorPrimaryVariant">@color/yellow</item> <!-- màu đậm hơn, dùng cho status bar -->
+        <item name="colorOnPrimary">@color/yellow</item> <!-- màu chữ nằm trên button màu xanh -->
+
+    </style>
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground">@color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.ChatGptAPI</item>
+    </style>
+
+</resources>
