@@ -1,73 +1,43 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from train import bot
+from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
+import torch
 
-app = Flask(__name__)
-CORS(app)
+tokenizer = AutoTokenizer.from_pretrained("NlpHUST/gpt2-vietnamese")
+model = AutoModelForCausalLM.from_pretrained("NlpHUST/gpt2-vietnamese")
 
-# Load model khi server start
-print("Loading bot...")
-bot.load_model()
-print("Bot ready!")
+# Load knowledge base
+knowledge_base = {}
+with open("data.txt", "r", encoding="utf-8") as f:
+    lines = [l.strip() for l in f.readlines() if l.strip()]
+    for i in range(0, len(lines), 2):
+        if i+1 < len(lines):
+            q = lines[i].replace("User:", "").strip()
+            a = lines[i+1].replace("Bot:", "").strip()
+            knowledge_base[q] = a
 
-@app.route("/", methods=["GET"])
-def home():
-    return jsonify({
-        "status": "running",
-        "message": "DragonFlyBot API dang chay",
-        "version": "2.0",
-        "qa_count": len(bot.knowledge_base)
-    })
+# Tạo context từ knowledge base
+context = "\n".join([f"Q: {q}\nA: {a}" for q, a in list(knowledge_base.items())[:10]])
 
-@app.route("/chat", methods=["POST"])
-def chat():
-    """Main chat endpoint"""
-    try:
-        data = request.get_json()
-        user_message = data.get("message", "").strip()
-        
-        if not user_message:
-            return jsonify({
-                "success": False,
-                "reply": "May chua noi gi het"
-            }), 400
-        
-        print(f"User: {user_message}")
-        
-        # Get answer from bot brain
-        answer, method = bot.chat(user_message)
-        
-        print(f"Bot: {answer} [{method}]")
-        
-        return jsonify({
-            "success": True,
-            "user_message": user_message,
-            "reply": answer,
-            "method": method
-        }), 200
+def generate_answer(user_input):
+    prompt = f"""Bạn là DragonFlyBot, chatbot hỗ trợ sinh viên Đại học Duy Tân.
+
+Kiến thức:
+{context}
+
+Câu hỏi: {user_input}
+Trả lời:"""
     
-    except Exception as e:
-        print(f"Error: {e}")
-        return jsonify({
-            "success": False,
-            "reply": "Co loi xay ra"
-        }), 500
+    inputs = tokenizer(prompt, return_tensors="pt")
+    outputs = model.generate(
+        inputs["input_ids"],
+        max_length=200,
+        temperature=0.7,
+        top_p=0.9,
+        do_sample=True,
+        pad_token_id=tokenizer.eos_token_id
+    )
+    
+    reply = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return reply.split("Trả lời:")[-1].strip()
 
-@app.route("/health", methods=["GET"])
-def health():
-    return jsonify({
-        "status": "healthy",
-        "knowledge_base_size": len(bot.knowledge_base)
-    }), 200
-
-@app.route("/info", methods=["GET"])
-def info():
-    return jsonify({
-        "name": "DragonFlyBot",
-        "version": "2.0",
-        "qa_count": len(bot.knowledge_base),
-        "language": "Vietnamese"
-    }), 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+# Test
+print(generate_answer("Trường Duy Tân ở đâu?"))
