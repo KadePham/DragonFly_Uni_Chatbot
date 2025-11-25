@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "524186733243",
+    "firebase_url": "https://todolist1-f780c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "todolist1-f780c",
+    "storage_bucket": "todolist1-f780c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524186733243:android:24fe3be36dc82f599eb79e",
+        "android_client_info": {
+          "package_name": "com.example.chatbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjibq6dGwzfTBm8pQ-SamQdVkdgzPt8Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524186733243:android:3b28fec9fa0f4ef99eb79e",
+        "android_client_info": {
+          "package_name": "com.example.chatgptapi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjibq6dGwzfTBm8pQ-SamQdVkdgzPt8Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524186733243:android:6b7b1f280ca924c69eb79e",
+        "android_client_info": {
+          "package_name": "com.example.todolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjibq6dGwzfTBm8pQ-SamQdVkdgzPt8Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
