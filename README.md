@@ -19,7 +19,7 @@
 
 ## 📦 Hướng dẫn Cài đặt (3 Bước đơn giản)
 
-### Bước 1: Cài đặt & Chuẩn bị Model AI
+## Bước 1: Cài đặt & Chuẩn bị Model AI
 1. Tải và cài đặt phần mềm **Ollama** tại: [https://ollama.com](https://ollama.com).
 2. Mở Terminal (CMD/PowerShell) và chạy 2 lệnh sau để tải "bộ não" cho AI:
    ```bash
@@ -29,17 +29,21 @@
 ## Bước 2: Thiết lập môi trường Python
 Tại thư mục dự án, chạy lần lượt các lệnh sau:
 
-# 1. Tạo môi trường ảo
-python -m venv venv
+1. Tạo môi trường ảo
+  ```bash
+  python -m venv venv
 
-# 2. Kích hoạt môi trường (Windows)
-.\venv\Scripts\activate
+2. Kích hoạt môi trường (Windows)
+  ```bash
+  .\venv\Scripts\activate
 
-# 3. Cài đặt thư viện cần thiết
-pip install -r requirements.txt
+3. Cài đặt thư viện cần thiết
+  ```bash
+  pip install -r requirements.txt
 
 ## Bước 3: Khởi động Server
-python -m uvicorn ai_model:app --reload
+  ```bash
+  python -m uvicorn ai_model:app --reload
 
 Server sẽ chạy tại: http://127.0.0.1:8000
 
@@ -59,11 +63,11 @@ Bạn có thể test nhanh bằng Postman hoặc Thunder Client:
     }
 
 2. Kết quả trả về
-JSON
+    JSON
 
-{
-  "result": "Học phí ngành CNTT hiện tại là 25.000.000 VNĐ/năm."
-}
+    {
+      "result": "Học phí ngành CNTT hiện tại là 25.000.000 VNĐ/năm."
+    }
 
 ## 🌐 (Tùy chọn) Public ra Internet với Ngrok
 
@@ -75,9 +79,11 @@ JSON
     Bash
 
     # Thay TOKEN của bạn vào bên dưới
+    ```bash
     ngrok config add-authtoken <TOKEN_CUA_BAN>
 
     # Mở cổng public
+    ```bash
     ngrok http 8000
 
     Copy đường dẫn https://xxxx.ngrok-free.app để sử dụng.
