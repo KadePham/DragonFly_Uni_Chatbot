@@ -1,0 +1,21 @@
+# Python environment
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+
+# System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Application Data
+chroma_db/
+*.log
+.env
+
+# Tools
+ngrok.exe
+ngrok
