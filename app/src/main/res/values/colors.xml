@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#DDF803</color>
+
+    <!-- Light Mode Colors -->
+    <color name="light_primary_bg">#488BAD</color>
+    <color name="light_header_bg">#66000000</color>
+    <color name="light_text_primary">#FFFFFF</color>
+    <color name="light_text_secondary">#888888</color>
+    <color name="light_sidebar_bg">#2F2B2B</color>
+    <color name="light_sidebar_text">#FFFFFF</color>
+    <color name="light_input_bg">#66000000</color>
+    <color name="light_input_text">#FFFFFF</color>
+    <color name="light_input_hint">#88FFFFFF</color>
+    <color name="light_card_bg">#FFFFFF</color>
+
+    <!-- Dark Mode Colors -->
+    <color name="dark_primary_bg">#1E1E1E</color>
+    <color name="dark_header_bg">#2A2A2A</color>
+    <color name="dark_text_primary">#FFFFFF</color>
+    <color name="dark_text_secondary">#B3B3B3</color>
+    <color name="dark_sidebar_bg">#1A1A1A</color>
+    <color name="dark_sidebar_text">#FFFFFF</color>
+    <color name="dark_input_bg">#2A2A2A</color>
+    <color name="dark_input_text">#FFFFFF</color>
+    <color name="dark_input_hint">#66FFFFFF</color>
+    <color name="dark_card_bg">#2A2A2A</color>
+
+    <!-- Semantic colors (adaptive) -->
+    <color name="primary_bg">@color/light_primary_bg</color>
+    <color name="header_bg">@color/light_header_bg</color>
+    <color name="text_primary">@color/light_text_primary</color>
+    <color name="text_secondary">@color/light_text_secondary</color>
+    <color name="sidebar_bg">@color/light_sidebar_bg</color>
+    <color name="sidebar_text">@color/light_sidebar_text</color>
+    <color name="input_bg">@color/light_input_bg</color>
+    <color name="input_text">@color/light_input_text</color>
+    <color name="input_hint">@color/light_input_hint</color>
+    <color name="card_bg">@color/light_card_bg</color>
+
+</resources>

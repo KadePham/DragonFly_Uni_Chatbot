@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Hỗ trợ sinh viên DTU</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="pref_theme_values">
+        <item>Tự động</item>
+        <item>Sáng</item>
+        <item>Tối</item>
+    </string-array>
+
+    <string-array name="pref_language_values">
+        <item>Tự động</item>
+        <item>Tiếng Việt</item>
+        <item>English</item>
+    </string-array>
+
+    <!-- Admin views -->
+    <string name="admin_inbox_title">Tin nhắn chưa trả lời</string>
+    <string name="admin_no_unread_messages">Không có tin nhắn chưa trả lời</string>
+    <string name="admin_access_denied">Bạn không phải admin</string>
+    <string name="admin_error_permission">Lỗi kiểm tra quyền</string>
+    <string name="admin_chat_title">Chat với Admin Support</string>
+
+    <string-array name="role_array">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
+
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">278992454640-sne5agjkkaug02ts8afdjm9dmcrl941c.apps.googleusercontent.com</string>
+
+</resources>

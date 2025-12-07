@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomShapeBottomSheet</item>
+    </style>
+
+    <style name="CustomShapeBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.BottomSheetDialog</item>
+    </style>
+
+    <style name="ShapeAppearance.BottomSheetDialog" parent="">
+        <!-- để AndroidX Material: bạn có thể dùng material theme để bo góc -->
+    </style>
+</resources>

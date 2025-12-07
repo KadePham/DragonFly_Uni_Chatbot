@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set User Role"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Email Input -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/edtUserEmail"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="user@gmail.com"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:textColorHint="@color/black"
+        android:paddingEnd="12dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_input" />
+
+    <!-- Role Spinner -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Role:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerRole"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:entries="@array/role_array" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/btnGetRole"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:text="Get Role"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnSetRole"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:text="Set Role"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Result -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="..."
+        android:textSize="14sp"
+        android:padding="12dp"
+        android:background="@drawable/bg_input"
+        android:gravity="top" />
+
+</LinearLayout>
+

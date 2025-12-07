@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for Dark Mode. -->
+    <style name="Base.Theme.ChatGptAPI" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/dark_primary_bg</item>
+        <item name="colorPrimaryContainer">@color/dark_input_bg</item>
+        <item name="colorOnPrimary">@color/dark_text_primary</item>
+        <item name="colorOnPrimaryContainer">@color/dark_text_primary</item>
+        <item name="colorSecondary">@color/dark_sidebar_bg</item>
+        <item name="colorOnSecondary">@color/dark_sidebar_text</item>
+        <item name="colorTertiary">@color/yellow</item>
+        <item name="android:windowBackground">@color/dark_primary_bg</item>
+    </style>
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground">@color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.ChatGptAPI</item>
+    </style>
+
+</resources>
